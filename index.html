@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CineBook - Movie Ticket Booking</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="icon" href="assets/images/logo.png" type="image/png">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <img src="https://img.freepik.com/premium-vector/movie-ticket-logo-template-design_20029-891.jpg" alt="CineBook Logo">
+                <h1>CineBook</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#movies">Movies</a></li>
+                    <li><a href="#theaters">Theaters</a></li>
+                    <li><a href="#offers">Offers</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="auth-buttons">
+                <button id="login-btn">Login</button>
+                <button id="signup-btn">Sign Up</button>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h2>Book Your Movie Experience</h2>
+            <p>Discover the latest blockbusters and reserve your seats in just a few clicks!</p>
+            <button class="cta-button" id="book-now-btn">Book Now</button>
+        </div>
+    </section>
+
+    <section class="now-showing" id="movies">
+        <h2 class="section-title">Now Showing</h2>
+        <div class="movie-container" id="movie-container">
+            <!-- Movies will be loaded dynamically -->
+        </div>
+    </section>
+
+    <section class="booking-section">
+        <div class="container">
+            <h2>Quick Booking</h2>
+            <div class="booking-form">
+                <div class="form-group">
+                    <label for="movie-select">Select Movie:</label>
+                    <select id="movie-select">
+                        <option value="">-- Choose a movie --</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="theater-select">Select Theater:</label>
+                    <select id="theater-select">
+                        <option value="">-- Choose a theater --</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="date-select">Select Date:</label>
+                    <input type="date" id="date-select">
+                </div>
+                <div class="form-group">
+                    <label for="time-select">Select Time:</label>
+                    <select id="time-select">
+                        <option value="">-- Choose a time --</option>
+                    </select>
+                </div>
+                <button class="cta-button" id="check-seats-btn">Check Available Seats</button>
+            </div>
+        </div>
+    </section>
+
+    <section class="seat-selection" id="seat-selection" style="display: none;">
+        <div class="container">
+            <h2>Select Your Seats</h2>
+            <div class="screen">Screen</div>
+            <div class="seats-container" id="seats-container">
+                <!-- Seats will be generated dynamically -->
+            </div>
+            <div class="booking-summary">
+                <h3>Booking Summary</h3>
+                <div class="summary-details">
+                    <p><span>Movie:</span> <span id="summary-movie">-</span></p>
+                    <p><span>Theater:</span> <span id="summary-theater">-</span></p>
+                    <p><span>Date:</span> <span id="summary-date">-</span></p>
+                    <p><span>Time:</span> <span id="summary-time">-</span></p>
+                    <p><span>Seats:</span> <span id="summary-seats">-</span></p>
+                    <p><span>Total Price:</span> <span id="summary-price">$0</span></p>
+                </div>
+                <button class="cta-button" id="confirm-booking-btn">Confirm Booking</button>
+            </div>
+        </div>
+    </section>
+
+    <section class="theaters" id="theaters">
+        <div class="container">
+            <h2 class="section-title">Our Theaters</h2>
+            <div class="theater-cards">
+                <div class="theater-card">
+                    <img src="https://cdn.freebiesupply.com/logos/large/2x/downtown-snack-bar-logo-png-transparent.png" alt="Downtown Cinema">
+                    <h3>Downtown Cinema</h3>
+                    <p>123 Main Street, City Center</p>
+                    <p>10 screens | Dolby Atmos</p>
+                </div>
+                <div class="theater-card">
+                    <img src="http://farm3.staticflickr.com/2740/4420650927_ac785ae3e2_z.jpg" alt="Mall Multiplex">
+                    <h3>Mall Multiplex</h3>
+                    <p>456 Shopping Ave, West District</p>
+                    <p>12 screens | IMAX</p>
+                </div>
+                <div class="theater-card">
+                    <img src="https://i.pinimg.com/originals/ea/02/51/ea0251e93c2b70df1b22aeff156783f3.jpg" alt="Riverside Theater">
+                    <h3>Riverside Theater</h3>
+                    <p>789 River Road, East Side</p>
+                    <p>8 screens | 4DX</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="offers" id="offers">
+        <div class="container">
+            <h2 class="section-title">Special Offers</h2>
+            <div class="offer-cards">
+                <div class="offer-card">
+                    <div class="offer-badge">20% OFF</div>
+                    <h3>Monday Madness</h3>
+                    <p>Every Monday, get 20% off on all movie tickets. Use code MON20 at checkout.</p>
+                </div>
+                <div class="offer-card">
+                    <div class="offer-badge">1+1 FREE</div>
+                    <h3>Weekend Special</h3>
+                    <p>Buy one ticket, get one free on Saturdays and Sundays. Limited to first 100 bookings.</p>
+                </div>
+                <div class="offer-card">
+                    <div class="offer-badge">$5 OFF</div>
+                    <h3>Student Discount</h3>
+                    <p>Students get $5 off on all shows with valid student ID.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="contact" id="contact">
+        <div class="container">
+            <h2 class="section-title">Contact Us</h2>
+            <div class="contact-container">
+                <div class="contact-info">
+                    <h3>Get in Touch</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> 123 Cinema Street, Movie City, MC 12345</p>
+                    <p><i class="fas fa-phone"></i> +1 (555) 123-4567</p>
+                    <p><i class="fas fa-envelope"></i> info@cinebook.com</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <form id="contact-form">
+                        <div class="form-group">
+                            <input type="text" placeholder="Your Name" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" placeholder="Your Email" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" placeholder="Subject">
+                        </div>
+                        <div class="form-group">
+                            <textarea placeholder="Your Message" required></textarea>
+                        </div>
+                        <button type="submit" class="cta-button">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>About CineBook</h3>
+                    <p>Your one-stop destination for booking movie tickets online. We provide the best cinematic experience with comfortable seating and state-of-the-art technology.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#movies">Movies</a></li>
+                        <li><a href="#theaters">Theaters</a></li>
+                        <li><a href="#offers">Offers</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Newsletter</h3>
+                    <p>Subscribe to our newsletter for the latest updates and offers.</p>
+                    <form id="newsletter-form">
+                        <input type="email" placeholder="Your Email" required>
+                        <button type="submit">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 CineBook. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Modals -->
+    <div class="modal" id="login-modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h2>Login</h2>
+            <form id="login-form">
+                <div class="form-group">
+                    <label for="login-email">Email</label>
+                    <input type="email" id="login-email" required>
+                </div>
+                <div class="form-group">
+                    <label for="login-password">Password</label>
+                    <input type="password" id="login-password" required>
+                </div>
+                <button type="submit" class="cta-button">Login</button>
+                <p>Don't have an account? <a href="#" id="switch-to-signup">Sign up</a></p>
+            </form>
+        </div>
+    </div>
+
+    <div class="modal" id="signup-modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h2>Sign Up</h2>
+            <form id="signup-form">
+                <div class="form-group">
+                    <label for="signup-name">Full Name</label>
+                    <input type="text" id="signup-name" required>
+                </div>
+                <div class="form-group">
+                    <label for="signup-email">Email</label>
+                    <input type="email" id="signup-email" required>
+                </div>
+                <div class="form-group">
+                    <label for="signup-password">Password</label>
+                    <input type="password" id="signup-password" required>
+                </div>
+                <div class="form-group">
+                    <label for="signup-confirm">Confirm Password</label>
+                    <input type="password" id="signup-confirm" required>
+                </div>
+                <button type="submit" class="cta-button">Sign Up</button>
+                <p>Already have an account? <a href="#" id="switch-to-login">Login</a></p>
+            </form>
+        </div>
+    </div>
+
+    <div class="modal" id="booking-modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <div class="booking-success">
+                <i class="fas fa-check-circle"></i>
+                <h2>Booking Confirmed!</h2>
+                <p>Your movie tickets have been successfully booked.</p>
+                <div class="booking-details">
+                    <p><strong>Booking ID:</strong> <span id="booking-id">CB123456</span></p>
+                    <p><strong>Movie:</strong> <span id="confirmed-movie">-</span></p>
+                    <p><strong>Theater:</strong> <span id="confirmed-theater">-</span></p>
+                    <p><strong>Date & Time:</strong> <span id="confirmed-datetime">-</span></p>
+                    <p><strong>Seats:</strong> <span id="confirmed-seats">-</span></p>
+                    <p><strong>Total:</strong> <span id="confirmed-total">-</span></p>
+                </div>
+                <button class="cta-button" id="print-ticket-btn">Print Ticket</button>
+                <button class="cta-button secondary" id="close-booking-btn">Close</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,1025 @@
+
+/* Global Styles */
+:root {
+    --primary-color: #e50914;
+    --secondary-color: #221f1f;
+    --accent-color: #f5f5f1;
+    --text-color: #ffffff;
+    --text-secondary: #b3b3b3;
+    --dark-bg: #000000;
+    --light-bg: #f8f8f8;
+    --success-color: #2ecc71;
+    --warning-color: #e67e22;
+    --error-color: #e74c3c;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: var(--dark-bg);
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    margin-bottom: 20px;
+    font-weight: 700;
+}
+
+p {
+    margin-bottom: 15px;
+}
+
+a {
+    text-decoration: none;
+    color: var(--text-color);
+}
+
+button {
+    cursor: pointer;
+    border: none;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+.cta-button {
+    background-color: var(--primary-color);
+    color: var(--text-color);
+    padding: 12px 25px;
+    border-radius: 5px;
+    font-weight: 600;
+    font-size: 16px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.cta-button:hover {
+    background-color: #f40612;
+    transform: translateY(-2px);
+}
+
+.cta-button.secondary {
+    background-color: transparent;
+    border: 2px solid var(--primary-color);
+    margin-left: 10px;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 50px;
+    position: relative;
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 3px;
+    background-color: var(--primary-color);
+}
+
+/* Header Styles */
+header {
+    background-color: rgba(0, 0, 0, 0.9);
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+    padding: 15px 0;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    height: 40px;
+    margin-right: 10px;
+}
+
+.logo h1 {
+    margin-bottom: 0;
+    font-size: 1.8rem;
+    color: var(--primary-color);
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+}
+
+nav ul li {
+    margin-left: 30px;
+}
+
+nav ul li a {
+    font-weight: 500;
+    font-size: 1.1rem;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: var(--primary-color);
+}
+
+.auth-buttons button {
+    margin-left: 15px;
+    padding: 8px 20px;
+    border-radius: 5px;
+    font-weight: 600;
+}
+
+.auth-buttons #login-btn {
+    background-color: transparent;
+    border: 2px solid var(--primary-color);
+    color: var(--primary-color);
+}
+
+.auth-buttons #signup-btn {
+    background-color: var(--primary-color);
+    color: var(--text-color);
+}
+
+/* Hero Section */
+.hero {
+    height: 100vh;
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('assets/images/hero-bg.jpg');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    padding-top: 80px;
+}
+
+.hero-content {
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.hero h2 {
+    font-size: 3.5rem;
+    margin-bottom: 20px;
+    line-height: 1.2;
+}
+
+.hero p {
+    font-size: 1.3rem;
+    margin-bottom: 30px;
+    color: var(--text-secondary);
+}
+
+/* Now Showing Section */
+.now-showing {
+    padding: 80px 0;
+    background-color: var(--secondary-color);
+}
+
+.movie-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 30px;
+}
+
+.movie-card {
+    background-color: #1a1a1a;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease;
+}
+
+.movie-card:hover {
+    transform: translateY(-10px);
+}
+
+.movie-poster {
+    height: 350px;
+    overflow: hidden;
+}
+
+.movie-poster img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.movie-card:hover .movie-poster img {
+    transform: scale(1.05);
+}
+
+.movie-info {
+    padding: 20px;
+}
+
+.movie-title {
+    font-size: 1.3rem;
+    margin-bottom: 10px;
+    color: var(--text-color);
+}
+
+.movie-meta {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+    color: var(--text-secondary);
+}
+
+.movie-rating {
+    color: #f5c518;
+    font-weight: bold;
+}
+
+.movie-description {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    margin-bottom: 20px;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.movie-book-btn {
+    width: 100%;
+    padding: 10px;
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+/* Booking Section */
+.booking-section {
+    padding: 60px 0;
+    background-color: var(--dark-bg);
+}
+
+.booking-form {
+    background-color: #1a1a1a;
+    padding: 30px;
+    border-radius: 10px;
+    max-width: 800px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+}
+
+.form-group select,
+.form-group input {
+    width: 100%;
+    padding: 12px;
+    border-radius: 5px;
+    border: none;
+    background-color: #333;
+    color: var(--text-color);
+}
+
+.form-group input[type="date"] {
+    padding: 11px;
+}
+
+#check-seats-btn {
+    grid-column: 1 / -1;
+    margin-top: 10px;
+}
+
+/* Seat Selection Section */
+.seat-selection {
+    padding: 60px 0;
+    background-color: var(--secondary-color);
+}
+
+.screen {
+    background-color: var(--accent-color);
+    color: var(--secondary-color);
+    text-align: center;
+    padding: 15px;
+    margin-bottom: 40px;
+    border-radius: 5px;
+    font-weight: bold;
+    box-shadow: 0 3px 10px rgba(255, 255, 255, 0.1);
+}
+
+.seats-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 40px;
+}
+
+.seat-row {
+    display: flex;
+    margin-bottom: 15px;
+}
+
+.seat {
+    width: 30px;
+    height: 30px;
+    margin: 0 5px;
+    background-color: #444;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.seat:hover {
+    transform: scale(1.1);
+}
+
+.seat.selected {
+    background-color: var(--primary-color);
+}
+
+.seat.occupied {
+    background-color: #777;
+    cursor: not-allowed;
+}
+
+.seat-legend {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+
+.legend-item {
+    display: flex;
+    align-items: center;
+    margin: 0 15px;
+}
+
+.legend-color {
+    width: 20px;
+    height: 20px;
+    border-radius: 3px;
+    margin-right: 8px;
+}
+
+.legend-color.available {
+    background-color: #444;
+}
+
+.legend-color.selected {
+    background-color: var(--primary-color);
+}
+
+.legend-color.occupied {
+    background-color: #777;
+}
+
+.booking-summary {
+    background-color: #1a1a1a;
+    padding: 25px;
+    border-radius: 10px;
+    margin-top: 30px;
+}
+
+.booking-summary h3 {
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #333;
+}
+
+.summary-details p {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.summary-details p span:first-child {
+    font-weight: 600;
+    color: var(--text-secondary);
+}
+
+#confirm-booking-btn {
+    width: 100%;
+    margin-top: 20px;
+}
+
+/* Theaters Section */
+.theaters {
+    padding: 80px 0;
+    background-color: var(--dark-bg);
+}
+
+.theater-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.theater-card {
+    background-color: #1a1a1a;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease;
+}
+
+.theater-card:hover {
+    transform: translateY(-10px);
+}
+
+.theater-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.theater-card h3 {
+    padding: 0 20px;
+    margin-top: 15px;
+}
+
+.theater-card p {
+    padding: 0 20px;
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    margin-bottom: 15px;
+}
+
+/* Offers Section */
+.offers {
+    padding: 80px 0;
+    background-color: var(--secondary-color);
+}
+
+.offer-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.offer-card {
+    background-color: #1a1a1a;
+    border-radius: 10px;
+    padding: 30px;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease;
+}
+
+.offer-card:hover {
+    transform: translateY(-10px);
+}
+
+.offer-badge {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: var(--primary-color);
+    color: white;
+    padding: 5px 15px;
+    border-bottom-left-radius: 10px;
+    font-weight: bold;
+}
+
+.offer-card h3 {
+    margin-top: 10px;
+    margin-bottom: 15px;
+}
+
+.offer-card p {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+}
+
+/* Contact Section */
+.contact {
+    padding: 80px 0;
+    background-color: var(--dark-bg);
+}
+
+.contact-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 50px;
+}
+
+.contact-info h3 {
+    margin-bottom: 30px;
+}
+
+.contact-info p {
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+}
+
+.contact-info i {
+    margin-right: 15px;
+    color: var(--primary-color);
+    font-size: 1.2rem;
+    width: 20px;
+    text-align: center;
+}
+
+.social-links {
+    display: flex;
+    margin-top: 30px;
+}
+
+.social-links a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background-color: #1a1a1a;
+    border-radius: 50%;
+    margin-right: 15px;
+    transition: all 0.3s ease;
+}
+
+.social-links a:hover {
+    background-color: var(--primary-color);
+    transform: translateY(-3px);
+}
+
+.contact-form .form-group {
+    margin-bottom: 20px;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 12px;
+    border-radius: 5px;
+    border: none;
+    background-color: #1a1a1a;
+    color: var(--text-color);
+}
+
+.contact-form textarea {
+    height: 150px;
+    resize: vertical;
+}
+
+/* Footer */
+footer {
+    background-color: #1a1a1a;
+    padding: 60px 0 20px;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 40px;
+    margin-bottom: 40px;
+}
+
+.footer-section h3 {
+    margin-bottom: 25px;
+    font-size: 1.3rem;
+}
+
+.footer-section ul {
+    list-style: none;
+}
+
+.footer-section ul li {
+    margin-bottom: 10px;
+}
+
+.footer-section ul li a:hover {
+    color: var(--primary-color);
+}
+
+#newsletter-form {
+    display: flex;
+    margin-top: 20px;
+}
+
+#newsletter-form input {
+    flex: 1;
+    padding: 10px;
+    border: none;
+    border-radius: 5px 0 0 5px;
+    background-color: #333;
+    color: var(--text-color);
+}
+
+#newsletter-form button {
+    padding: 0 15px;
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 0 5px 5px 0;
+    font-weight: bold;
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 20px;
+    border-top: 1px solid #333;
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+}
+
+/* Modal Styles */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    z-index: 2000;
+    overflow-y: auto;
+}
+
+.modal-content {
+    background-color: #1a1a1a;
+    margin: 5% auto;
+    padding: 30px;
+    border-radius: 10px;
+    width: 90%;
+    max-width: 500px;
+    position: relative;
+    animation: modalopen 0.5s;
+}
+
+@keyframes modalopen {
+    from {
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.close-modal {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 1.8rem;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.close-modal:hover {
+    color: var(--primary-color);
+}
+
+.modal h2 {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.modal .form-group {
+    margin-bottom: 20px;
+}
+
+.modal .form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+}
+
+.modal .form-group input {
+    width: 100%;
+    padding: 12px;
+    border-radius: 5px;
+    border: none;
+    background-color: #333;
+    color: var(--text-color);
+}
+
+.modal .cta-button {
+    width: 100%;
+    margin-top: 20px;
+}
+
+.booking-success {
+    text-align: center;
+    padding: 20px;
+}
+
+.booking-success i {
+    font-size: 4rem;
+    color: var(--success-color);
+    margin-bottom: 20px;
+}
+
+.booking-success h2 {
+    margin-bottom: 10px;
+}
+
+.booking-details {
+    text-align: left;
+    margin: 30px 0;
+    padding: 20px;
+    background-color: #333;
+    border-radius: 5px;
+}
+
+.booking-details p {
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.booking-details p span:first-child {
+    font-weight: 600;
+    color: var(--text-secondary);
+}
+
+/* Responsive Styles */
+@media (max-width: 992px) {
+    .hero h2 {
+        font-size: 2.8rem;
+    }
+    
+    .hero p {
+        font-size: 1.1rem;
+    }
+    
+    .section-title {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    header .container {
+        flex-direction: column;
+    }
+    
+    .logo {
+        margin-bottom: 15px;
+    }
+    
+    nav ul {
+        margin-bottom: 15px;
+    }
+    
+    .hero {
+        padding-top: 150px;
+        height: auto;
+        padding-bottom: 80px;
+    }
+    
+    .hero h2 {
+        font-size: 2.2rem;
+    }
+    
+    .section-title {
+        font-size: 1.8rem;
+    }
+    
+    .booking-form {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 576px) {
+    nav ul li {
+        margin-left: 15px;
+    }
+    
+    .auth-buttons {
+        display: flex;
+        width: 100%;
+        justify-content: center;
+    }
+    
+    .hero h2 {
+        font-size: 1.8rem;
+    }
+    
+    .movie-container {
+        grid-template-columns: 1fr;
+    }
+    
+    .theater-cards, .offer-cards {
+        grid-template-columns: 1fr;
+    }
+    
+    .modal-content {
+        width: 95%;
+        padding: 20px;
+    }
+}/* Add these to your existing CSS */
+
+/* Glassmorphism Effect */
+.glass-card {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.36);
+}
+
+/* Neon Glow Effects */
+.neon-btn {
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.neon-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--primary-color);
+    z-index: -1;
+    opacity: 0;
+    transition: opacity 0.3s, box-shadow 0.3s;
+}
+
+.neon-btn:hover::before {
+    opacity: 1;
+    box-shadow: 0 0 10px var(--primary-color),
+                0 0 20px var(--primary-color),
+                0 0 40px var(--primary-color);
+}
+
+/* 3D Movie Cards */
+.movie-card {
+    perspective: 1000px;
+    transform-style: preserve-3d;
+    transition: transform 0.6s;
+}
+
+.movie-card:hover {
+    transform: rotateY(15deg) scale(1.05);
+}
+
+.movie-poster {
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 0.6s;
+}
+
+.movie-card:hover .movie-poster {
+    transform: rotateY(-15deg) translateZ(20px);
+}
+
+/* Animated Background */
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+    background-size: 400% 400%;
+    animation: gradientBG 15s ease infinite;
+    z-index: -2;
+    opacity: 0.2;
+}
+
+@keyframes gradientBG {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Custom Cursor */
+.cursor {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: var(--primary-color);
+    position: fixed;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+    mix-blend-mode: difference;
+    z-index: 9999;
+    transition: transform 0.2s, width 0.3s, height 0.3s;
+}
+
+.cursor-follower {
+    width: 40px;
+    height: 40px;
+    border: 2px solid var(--primary-color);
+    border-radius: 50%;
+    position: fixed;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+    z-index: 9998;
+    transition: transform 0.4s, width 0.3s, height 0.3s;
+}
+
+/* Hover effects for cursor */
+a:hover ~ .cursor,
+button:hover ~ .cursor,
+.movie-card:hover ~ .cursor {
+    transform: translate(-50%, -50%) scale(2);
+    background-color: white;
+}
+
+a:hover ~ .cursor-follower,
+button:hover ~ .cursor-follower,
+.movie-card:hover ~ .cursor-follower {
+    transform: translate(-50%, -50%) scale(0.5);
+    background-color: rgba(229, 9, 20, 0.5);
+}
+
+/* Dark/Light Mode Toggle */
+.theme-toggle {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: var(--secondary-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    z-index: 1000;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.theme-toggle i {
+    font-size: 1.5rem;
+    color: var(--accent-color);
+}
+
+/* Light mode styles */
+body.light-mode {
+    background-color: #f5f5f5;
+    color: #333;
+}
+
+body.light-mode .glass-card {
+    background: rgba(255, 255, 255, 0.7);
+}
+
+body.light-mode .movie-card,
+body.light-mode .theater-card,
+body.light-mode .offer-card {
+    background-color: white;
+    color: #333;
+}
+
+/* Seat selection animation */
+.seat {
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.seat.selected {
+    animation: pulse 0.5s ease;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.2); }
+    100% { transform: scale(1); }
+}
+
+/* Floating particles */
+.particle {
+    position: absolute;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.5);
+    z-index: -1;
+}

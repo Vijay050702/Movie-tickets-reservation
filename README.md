@@ -39,13 +39,8 @@ movie-ticket-booking/
 ├── index.html          # Main application entry
 ├── styles.css          # All styling (1400+ LOC)
 ├── script.js           # Core functionality (800+ LOC)
-├── assets/
-│   ├── images/         # Visual assets
-│   │   ├── logos/      # Brand logos
-│   │   ├── movies/     # Movie posters
-│   │   ├── theaters/   # Theater photos
-│   │   └── ui/         # UI elements
 ├── README.md           # Documentation
+
 
 **🎮 How to Use**
 1.Browse Movies
@@ -76,5 +71,7 @@ const movies = [
     price: 12.99
   }
 ];
+
+-> Images for posters and logos were taken from google .
 
 Made by : Vijayasri Induri 
